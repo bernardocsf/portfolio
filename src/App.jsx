@@ -1,17 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import Hero from "./components/Hero";
+import About from "./components/About";
 
 function App() {
-  
-
   return (
     <>
-      
-      <h1>Bernardo Ferreira</h1>
-      <p>-  under construction -</p>
-     
+      <Hero />
+      <About />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
