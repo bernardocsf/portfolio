@@ -97,26 +97,25 @@
     text-align: center;
 
     .homeTitle {
-      top: 12%;
+      top: calc(10% + 1rem);  // Ajuste a distância no mobile
       left: 50%;
       transform: transLateX(-50%);
 
       h1 {
         line-height: 1;
-        font-size: 2.5rem;
+        font-size: 2rem;
 
         .homeTBernardo {
-          font-size: 4.5rem;
+          font-size: 4rem;
         }
       }
     }
 
     .topLeft {
-      /* top: 30%; 
+      top: calc(24% + 3rem);  // Ajuste a distância no mobile
       left: 50%;
       transform: translateX(-50%);
-      opacity: 0.3; */
-      display: none;
+      opacity: 0.3;
     }
 
     .topRight {
