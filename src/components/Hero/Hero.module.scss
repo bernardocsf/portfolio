@@ -1,0 +1,137 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../../assets/images/foto.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  font-size: 1rem;
+
+  .homeTitle {
+    position: absolute;
+    left: $side-padding;
+    top: 50%;
+    transform: transLateY(-50%);
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-title;
+      color: $color-secondary;
+      font-weight: $font-weight-semibold;
+      font-size: 8rem;
+
+      .homeTBernardo {
+        color: $color-primary;
+      }
+    }
+  }
+
+  .topLeft,
+  .topRight,
+  .bottomLeft,
+  .bottomRight {
+    position: absolute;
+  }
+
+  .topLeft {
+    top: $side-padding;
+    left: $side-padding;
+  }
+
+  .topRight {
+    top: $side-padding;
+    right: $side-padding;
+  }
+
+  .bottomLeft {
+    bottom: $side-padding;
+    left: $side-padding;
+    display: flex;
+  }
+
+  .bottomRight {
+    bottom: $side-padding;
+    right: $side-padding;
+    border: 2px solid white;
+    width: 30px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+
+    .ball {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid #ffffff60;
+      background-color: $color-secondary;
+      animation: bounceBall 2.5s infinite ease-in-out;
+    }
+  }
+
+  @keyframes bounceBall {
+    0%,
+    100% {
+      transform: translateY(10px);
+    }
+    55% {
+      transform: translateY(55px);
+      opacity: 0;
+    }
+  }
+
+  /* Mixin - mobile */
+  @include respond("mobile") {
+    background-position: 70% center;
+    text-align: center;
+
+    .homeTitle {
+      top: 12%;
+      left: 50%;
+      transform: transLateX(-50%);
+
+      h1 {
+        line-height: 1;
+        font-size: 2.5rem;
+
+        .homeTBernardo {
+          font-size: 4.5rem;
+        }
+      }
+    }
+
+    .topLeft {
+      /* top: 30%; 
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.3; */
+      display: none;
+    }
+
+    .topRight {
+      display: none;
+    }
+
+    .bottomLeft {
+      top: 5%;
+      left: 50%;
+      transform: transLateX(-50%);
+    }
+
+    .bottomRight {
+      left: 50%;
+      transform: transLateX(-50%);
+    }
+  }
+}
