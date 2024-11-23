@@ -112,10 +112,11 @@
     }
 
     .topLeft {
-      top: 30%; 
+      /* top: 30%; 
       left: 50%;
       transform: translateX(-50%);
-      opacity: 0.3;
+      opacity: 0.3; */
+      display: none;
     }
 
     .topRight {
