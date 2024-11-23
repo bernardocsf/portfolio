@@ -20,4 +20,10 @@
     border: 2px solid $color-secondary;
     background-color: $color-secondary;
   }
+
+  /* Mixin - mobile */
+  @include respond("mobile") {
+    border: none;
+    margin-right: 0;
+  }
 }
