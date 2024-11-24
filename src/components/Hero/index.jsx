@@ -19,6 +19,7 @@ const index = () => {
       <div className={styles.bottomRight}>
         <div className={styles.ball}></div>
       </div>
+      
     </div>
   );
 };

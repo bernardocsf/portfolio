@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./About.module.scss";
 import Ticker from "../Ticker";
 import Hobbies from "../Hobbies";
 
 const index = () => {
+  const [selectedOption, setSelectedOption] = useState("option1");
+
+  const optionChanged = (event) => {
+    const value = event.target.value;
+    setSelectedOption(value);
+    console.log(value);
+  };
+
   return (
     <div className={styles.about}>
       <div className={styles.leftSide}>
@@ -25,15 +33,36 @@ const index = () => {
         </div>
         <Hobbies />
       </div>
+
+      <hr />
+
       <div className={styles.rightSide}>
         <div className={styles.title}>
-          <h1>
-            <span>about</span>
+          <span>about</span>
+          <div className={styles.subTitle}>
             <span className={styles.me}>ME</span>
-          </h1>
+            <span className={styles.bio}>bio</span>
+          </div>
         </div>
         <div className={styles.button}>
           <span>Curriculum Vitae</span>
+        </div>
+        <div className={styles.radioButtons}>
+          <input
+            type="radio"
+            name="option"
+            value="option1"
+            checked={selectedOption === "option1"}
+            onChange={optionChanged}
+          />
+
+          <input
+            type="radio"
+            name="option"
+            value="option2"
+            checked={selectedOption === "option2"}
+            onChange={optionChanged}
+          />
         </div>
       </div>
     </div>
