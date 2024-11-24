@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.tickerContainer {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+
+  .tickerContent {
+    display: inline-flex;
+
+    .tickerWord {
+      font-style: italic;
+      font-size: 2rem;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  }
+}

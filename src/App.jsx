@@ -6,8 +6,10 @@ function App() {
   return (
     <>
       <Hero />
+      <About />
     </>
   );
 }
 
 export default App;
+

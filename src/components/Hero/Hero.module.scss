@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.home {
+.hero {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -10,16 +10,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: $font-body;
+  font-family: $font-body, Arial, sans-serif;
   font-weight: $font-weight-semibold;
   color: $color-primary;
   font-size: 1rem;
 
-  .homeTitle {
+  .heroTitle {
     position: absolute;
     left: $side-padding;
     top: 50%;
-    transform: transLateY(-50%);
+    transform: translateY(-50%);
 
     h1 {
       display: flex;
@@ -29,7 +29,7 @@
       font-weight: $font-weight-semibold;
       font-size: 8rem;
 
-      .homeTBernardo {
+      .heroTBernardo {
         color: $color-primary;
       }
     }
@@ -55,7 +55,6 @@
   .bottomLeft {
     bottom: $side-padding;
     left: $side-padding;
-    display: flex;
   }
 
   .bottomRight {
@@ -77,12 +76,12 @@
       border: 2px solid #ffffff60;
       background-color: $color-secondary;
       animation: bounceBall 2.5s infinite ease-in-out;
+      will-change: transform, opacity;
     }
   }
 
   @keyframes bounceBall {
-    0%,
-    100% {
+    0%, 100% {
       transform: translateY(10px);
     }
     55% {
@@ -92,27 +91,27 @@
   }
 
   /* Mixin - mobile */
-  @include respond("mobile") {
+  @include respond("s") {
     background-position: 70% center;
     text-align: center;
 
-    .homeTitle {
-      top: calc(10% + 1rem);  // Ajuste a distância no mobile
+    .heroTitle {
+      top: 14%;
       left: 50%;
-      transform: transLateX(-50%);
+      transform: translateX(-50%);
 
       h1 {
-        line-height: 1;
+        line-height: 2.5rem;
         font-size: 2rem;
 
-        .homeTBernardo {
+        .heroTBernardo {
           font-size: 4rem;
         }
       }
     }
 
     .topLeft {
-      top: calc(24% + 3rem);  // Ajuste a distância no mobile
+      top: calc(26vh + 2rem);
       left: 50%;
       transform: translateX(-50%);
       opacity: 0.3;
@@ -125,12 +124,13 @@
     .bottomLeft {
       top: 5%;
       left: 50%;
-      transform: transLateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
     }
 
     .bottomRight {
       left: 50%;
-      transform: transLateX(-50%);
+      transform: translateX(-50%);
     }
   }
 }

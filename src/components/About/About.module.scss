@@ -1,7 +1,81 @@
-@import "../../styles/variables"; // Caminho para o arquivo _variables.scss
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
-.about{
-    h1{
-        font-family: $font-body;
+.about {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px;
+    width: 40%;
+
+    .info {
+      letter-spacing: 0.09rem;
+
+      p {
+        font-weight: $font-weight-light;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+      }
+
+      h1 {
+        opacity: 0.3;
+        font-size: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 0;
+      }
     }
+  }
+
+  .rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
+    width: 20%;
+
+    .title {
+      margin: auto;
+
+      h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: $font-title;
+        font-size: 4rem;
+        letter-spacing: 0.09rem;
+
+        .me {
+          color: $color-secondary;
+        }
+      }
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 9rem;
+      height: 2.5rem;
+      border: 2px solid $color-secondary;
+      border-radius: 5px;
+      color: $color-secondary;
+      font-size: 0.8rem;
+    }
+  }
 }
