@@ -1,0 +1,132 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.bioSlide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: $font-body;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+
+    .info {
+      letter-spacing: 0.09rem;
+
+      p {
+        font-weight: $font-weight-light;
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+      }
+
+      h1 {
+        opacity: 0.3;
+        font-size: 4rem;
+        margin-top: 3rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  hr {
+    height: 60%;
+    border-color: $color-secondary;
+    margin: 100px;
+  }
+
+  .rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-title;
+      font-weight: $font-weight-semibold;
+      font-size: 5rem;
+      letter-spacing: 0.09rem;
+      margin-bottom: 0.5rem;
+
+      .subTitle {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        line-height: 4rem;
+
+        .me {
+          color: $color-secondary;
+        }
+
+        .bio {
+          color: $color-primary;
+          font-family: $font-body;
+          font-weight: $font-weight-regular;
+          font-size: 2rem;
+          opacity: 0.3;
+        }
+
+        /* .bio {
+          opacity: 0.3;
+        } */
+      }
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 10rem;
+      height: 2.5rem;
+      border: 2px solid $color-secondary;
+      border-radius: 5px;
+      color: $color-secondary;
+      font-weight: $font-weight-medium;
+      font-size: 0.8rem;
+      margin-bottom: 5rem;
+      cursor: pointer;
+    }
+
+    .radioButtons {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      input[type="radio"] {
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        width: 13px;
+        height: 13px;
+        border: 2px solid $color-primary;
+        opacity: 0.3;
+        border-radius: 50%;
+        background-color: transparent;
+        transition: box-shadow 0.3s ease-in-out;
+
+        &:checked {
+          background-color: $color-secondary;
+          border: 2px solid $color-secondary;
+          opacity: 1;
+          box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
+        }
+      }
+    }
+  }
+}

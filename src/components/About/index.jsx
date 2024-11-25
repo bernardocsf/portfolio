@@ -1,67 +1,36 @@
 import React, { useState, useEffect } from "react";
 import styles from "./About.module.scss";
-import Ticker from "../Ticker";
-import Hobbies from "../Hobbies";
+import Bio from "../Bio";
+import Skills from "../Skills";
 
 const index = () => {
   const [selectedOption, setSelectedOption] = useState("option1");
-
-  const optionChanged = (event) => {
-    const value = event.target.value;
-    setSelectedOption(value);
-    console.log(value);
+  console.log(selectedOption);
+  
+  const optionChanged = (option) => {
+    setSelectedOption(option);
   };
 
+  useEffect(() => {
+    if (!selectedOption) {
+      setSelectedOption("option1")
+    }
+  })
+
   return (
-    <div className={styles.about}>
-      <div className={styles.leftSide}>
-        <Ticker />
-        <div className={styles.info}>
-          <p>
-            these values are fundamental to me, both personally and
-            professionally. They guide mychoices, fostering a positive and
-            collaborative environment, while I constantly seek new challenges
-            and opportunities for continuous development.
-          </p>
-          <h1>WHO AM I?</h1>
-          <p>
-            I introduce myself as a Front-End Developer, but with a foot in
-            other areas of web development, aiming to constantly expand my
-            horizons. Throughout my journey, I have deepened my knowledge in web
-            design, back-end, and SEO.
-          </p>
+    <div className={styles.aboutContainer}>
+      <div
+        className={`${styles.slideWrapper} ${
+          selectedOption === "option2" ? styles.showSkills : ""
+        }`}
+      >
+        <div className={styles.slide}>
+          <Bio onOptionChange={optionChanged} selectedOption={selectedOption} />
         </div>
-        <Hobbies />
-      </div>
-
-      <hr />
-
-      <div className={styles.rightSide}>
-        <div className={styles.title}>
-          <span>about</span>
-          <div className={styles.subTitle}>
-            <span className={styles.me}>ME</span>
-            <span className={styles.bio}>bio</span>
-          </div>
-        </div>
-        <div className={styles.button}>
-          <span>Curriculum Vitae</span>
-        </div>
-        <div className={styles.radioButtons}>
-          <input
-            type="radio"
-            name="option"
-            value="option1"
-            checked={selectedOption === "option1"}
-            onChange={optionChanged}
-          />
-
-          <input
-            type="radio"
-            name="option"
-            value="option2"
-            checked={selectedOption === "option2"}
-            onChange={optionChanged}
+        <div className={styles.slide}>
+          <Skills
+            onOptionChange={optionChanged}
+            selectedOption={selectedOption}
           />
         </div>
       </div>
