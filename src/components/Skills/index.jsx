@@ -29,7 +29,9 @@ const index = ({ onOptionChange, selectedOption }) => {
           </div>
         </div>
         <div className={styles.buttonCV}>
-          <span>Curriculum Vitae</span>
+          <a href="/assets/cvEN.pdf" download="Curriculum Vitae">
+            <span>Curriculum Vitae</span>
+          </a>
         </div>
         <div className={styles.radioButtons}>
           <input

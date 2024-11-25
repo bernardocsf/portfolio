@@ -3,9 +3,8 @@ import styles from "./Bio.module.scss";
 import Ticker from "../Ticker";
 import Hobbies from "../Hobbies";
 
-const index = ({ onOptionChange, selectedOption}) => {
+const index = ({ onOptionChange, selectedOption }) => {
   console.log(selectedOption);
-  
 
   const optionChanged = (event) => {
     const value = event.target.value;
@@ -45,7 +44,9 @@ const index = ({ onOptionChange, selectedOption}) => {
           </div>
         </div>
         <div className={styles.buttonCV}>
-          <span>Curriculum Vitae</span>
+          <a href="/assets/cvEN.pdf" download="Curriculum Vitae">
+            <span>Curriculum Vitae</span>
+          </a>
         </div>
         <div className={styles.radioButtons}>
           <input

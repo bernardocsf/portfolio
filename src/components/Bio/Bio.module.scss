@@ -12,7 +12,7 @@
   color: $color-primary;
   font-size: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
 
@@ -43,7 +43,7 @@
   hr {
     height: 60%;
     border-color: $color-secondary;
-    margin: 0;
+    margin: 100px;
   }
 
   .rightSide {
@@ -94,11 +94,15 @@
       height: 2.5rem;
       border: 2px solid $color-secondary;
       border-radius: 5px;
-      color: $color-secondary;
-      font-weight: $font-weight-medium;
-      font-size: 0.8rem;
       margin-bottom: 5rem;
       cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: $color-secondary;
+        font-weight: $font-weight-medium;
+        font-size: 0.8rem;
+      }
     }
 
     .radioButtons {
@@ -134,13 +138,6 @@
           box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
         }
       }
-
-      /* input[value="option1"] {
-        background-color: $color-secondary;
-        border: 2px solid $color-secondary;
-        opacity: 1;
-        box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
-      } */
     }
   }
 }
