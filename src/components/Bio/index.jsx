@@ -44,7 +44,7 @@ const index = ({ onOptionChange, selectedOption}) => {
             <span className={styles.bio}>bio</span>
           </div>
         </div>
-        <div className={styles.button}>
+        <div className={styles.buttonCV}>
           <span>Curriculum Vitae</span>
         </div>
         <div className={styles.radioButtons}>

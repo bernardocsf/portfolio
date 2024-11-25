@@ -1,48 +1,34 @@
 import React from "react";
 import styles from "./Skills.module.scss";
-import Ticker from "../Ticker";
-import Hobbies from "../Hobbies";
+import HTMLIcon from "../../assets/icons/html.svg";
+import CSSIcon from "../../assets/icons/css.svg";
+import SassIcon from "../../assets/icons/sass.svg";
+import JSIcon from "../../assets/icons/js.svg";
+import TSIcon from "../../assets/icons/ts.svg";
+import TailwindIcon from "../../assets/icons/tailwind.svg";
+import BootstrapIcon from "../../assets/icons/bootstrap.svg";
+import ReactIcon from "../../assets/icons/react.svg";
+import NextIcon from "../../assets/icons/nextjs.svg";
+import VueIcon from "../../assets/icons/vue.svg";
+import GitIcon from "../../assets/icons/mdi_git.svg";
 
 const index = ({ onOptionChange, selectedOption }) => {
-
   const optionChanged = (event) => {
     const value = event.target.value;
     onOptionChange(value);
   };
 
   return (
-    <div className={styles.bioSlide}>
+    <div className={styles.skillsSlide}>
       <div className={styles.leftSide}>
-        <Ticker />
-        <div className={styles.info}>
-          <p>
-            these values are fundamental to me, both personally and
-            professionally. They guide mychoices, fostering a positive and
-            collaborative environment, while I constantly seek new challenges
-            and opportunities for continuous development.
-          </p>
-          <h1>Skills</h1>
-          <p>
-            I introduce myself as a Front-End Developer, but with a foot in
-            other areas of web development, aiming to constantly expand my
-            horizons. Throughout my journey, I have deepened my knowledge in web
-            design, back-end, and SEO.
-          </p>
-        </div>
-        <Hobbies />
-      </div>
-
-      <hr />
-
-      <div className={styles.rightSide}>
-        <div className={styles.title}>
+      <div className={styles.title}>
           <span>about</span>
           <div className={styles.subTitle}>
             <span className={styles.me}>ME</span>
             <span className={styles.bio}>skills</span>
           </div>
         </div>
-        <div className={styles.button}>
+        <div className={styles.buttonCV}>
           <span>Curriculum Vitae</span>
         </div>
         <div className={styles.radioButtons}>
@@ -53,7 +39,6 @@ const index = ({ onOptionChange, selectedOption }) => {
             checked={selectedOption === "option1"}
             onChange={optionChanged}
           />
-
           <input
             type="radio"
             name="option"
@@ -63,6 +48,58 @@ const index = ({ onOptionChange, selectedOption }) => {
           />
         </div>
       </div>
+       
+
+      <hr />
+
+      <div className={styles.rightSide}>
+      <div className={styles.skills}>
+          <ul>
+            <li>
+              <img src={HTMLIcon} />
+            </li>
+            <li>
+              <img src={CSSIcon} />
+            </li>
+            <li>
+              <img src={SassIcon} />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <img src={JSIcon} />
+            </li>
+            <li>
+              <img src={TSIcon} />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <img src={TailwindIcon} />
+            </li>
+            <li>
+              <img src={BootstrapIcon} />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <img src={ReactIcon} />
+            </li>
+            <li>
+              <img src={NextIcon} />
+            </li>
+            <li>
+              <img src={VueIcon} />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <img src={GitIcon} />
+            </li>
+          </ul>
+        </div>
+      </div>
+        
     </div>
   );
 };

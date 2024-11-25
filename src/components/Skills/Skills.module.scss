@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.bioSlide {
+.skillsSlide {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -12,7 +12,7 @@
   color: $color-primary;
   font-size: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 
@@ -20,38 +20,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-
-    .info {
-      letter-spacing: 0.09rem;
-
-      p {
-        font-weight: $font-weight-light;
-        font-size: 0.9rem;
-        line-height: 1.3rem;
-      }
-
-      h1 {
-        opacity: 0.3;
-        font-size: 4rem;
-        margin-top: 3rem;
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  hr {
-    height: 60%;
-    border-color: $color-secondary;
-    margin: 100px;
-  }
-
-  .rightSide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 12%;
+    width: 14%;
 
     .title {
       display: flex;
@@ -86,7 +56,7 @@
       }
     }
 
-    .button {
+    .buttonCV {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,13 +88,69 @@
         opacity: 0.3;
         border-radius: 50%;
         background-color: transparent;
-        transition: box-shadow 0.3s ease-in-out;
+        transition: opacity 0.5s ease;
+
+        &:hover {
+          background-color: $color-secondary;
+          border: none;
+          opacity: 0.5;
+        }
 
         &:checked {
           background-color: $color-secondary;
           border: 2px solid $color-secondary;
           opacity: 1;
           box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
+        }
+      }
+
+     /*  input[value="option2"] {
+        background-color: $color-secondary;
+        border: 2px solid $color-secondary;
+        opacity: 1;
+        box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
+      } */
+    }
+  }
+
+  hr {
+    height: 60%;
+    border-color: $color-secondary;
+    margin: 0;
+  }
+
+  .rightSide {
+    width: 55%;
+
+    .skills {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          opacity: 0.3;
+          transition: transform 0.3s ease, fill 0.3s ease;
+        }
+
+        &:hover svg {
+          opacity: 1;
+          transform: scale(1.2);
+          color: #e63946; /* Cor para o ícone ao passar o mouse */
         }
       }
     }

@@ -18,7 +18,7 @@ const index = () => {
   })
 
   return (
-    <div className={styles.aboutContainer}>
+    <div>
       <div
         className={`${styles.slideWrapper} ${
           selectedOption === "option2" ? styles.showSkills : ""

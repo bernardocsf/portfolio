@@ -12,7 +12,7 @@
   color: $color-primary;
   font-size: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 
@@ -43,7 +43,7 @@
   hr {
     height: 60%;
     border-color: $color-secondary;
-    margin: 100px;
+    margin: 0;
   }
 
   .rightSide {
@@ -86,7 +86,7 @@
       }
     }
 
-    .button {
+    .buttonCV {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,22 +105,28 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-    
+
       // Define estilos padrão para os botões de rádio
       input[type="radio"] {
         cursor: pointer;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-    
+
         width: 13px;
         height: 13px;
         border: 2px solid $color-primary;
         opacity: 0.3;
         border-radius: 50%;
         background-color: transparent;
-        transition: box-shadow 0.3s ease-in-out;
-    
+        transition: opacity 0.5s ease;
+
+        &:hover {
+          background-color: $color-secondary;
+          border: none;
+          opacity: 0.5;
+        }
+
         &:checked {
           background-color: $color-secondary;
           border: 2px solid $color-secondary;
@@ -128,13 +134,13 @@
           box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
         }
       }
-    
-      input[value="option1"] {
+
+      /* input[value="option1"] {
         background-color: $color-secondary;
         border: 2px solid $color-secondary;
         opacity: 1;
         box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
-      }
+      } */
     }
   }
 }
