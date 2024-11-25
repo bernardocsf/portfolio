@@ -26,6 +26,10 @@
       animation: animation 4s infinite;
     }
   }
+
+  @include respond("s") {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @keyframes animation {

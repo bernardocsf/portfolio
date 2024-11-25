@@ -24,4 +24,18 @@
       margin-right: 50px;
     }
   }
+
+  @include respond("s") {
+  
+    .tickerContent {
+      display: inline-flex;
+  
+      .tickerWord {
+        font-style: italic;
+        font-size: 1.5rem;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+    }
+  }
 }

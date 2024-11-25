@@ -5,7 +5,6 @@ import Skills from "../Skills";
 
 const index = () => {
   const [selectedOption, setSelectedOption] = useState("option1");
-  console.log(selectedOption);
   
   const optionChanged = (option) => {
     setSelectedOption(option);

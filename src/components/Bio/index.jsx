@@ -4,7 +4,6 @@ import Ticker from "../Ticker";
 import Hobbies from "../Hobbies";
 
 const index = ({ onOptionChange, selectedOption }) => {
-  console.log(selectedOption);
 
   const optionChanged = (event) => {
     const value = event.target.value;
@@ -13,6 +12,16 @@ const index = ({ onOptionChange, selectedOption }) => {
 
   return (
     <div className={styles.bioSlide}>
+
+      {/* .title para MOBILE */}
+      <div className={styles.titleS}>
+        <span>about</span>
+        <div className={styles.subTitleS}>
+          <span className={styles.meS}>ME</span>
+          <span className={styles.bioS}>bio</span>
+        </div>
+      </div>
+
       <div className={styles.leftSide}>
         <Ticker />
         <div className={styles.info}>
@@ -44,7 +53,7 @@ const index = ({ onOptionChange, selectedOption }) => {
           </div>
         </div>
         <div className={styles.buttonCV}>
-          <a href="/assets/cvEN.pdf" download="Curriculum Vitae">
+          <a href="/assets/BernardoCV.pdf" download="Curriculum Vitae">
             <span>Curriculum Vitae</span>
           </a>
         </div>

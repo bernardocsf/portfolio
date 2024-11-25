@@ -16,6 +16,10 @@
   align-items: center;
   text-align: center;
 
+  .titleS {
+    display: none;
+  }
+
   .leftSide {
     display: flex;
     flex-direction: column;
@@ -49,10 +53,6 @@
           font-size: 2rem;
           opacity: 0.3;
         }
-
-        /* .bio {
-          opacity: 0.3;
-        } */
       }
     }
 
@@ -138,16 +138,84 @@
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+    }
+  }
 
-        svg {
-          opacity: 0.3;
-          transition: transform 0.3s ease, fill 0.3s ease;
+  @include respond("s") {
+    flex-direction: column;
+
+    .titleS {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-title;
+      font-weight: $font-weight-semibold;
+      font-size: 3.5rem;
+      letter-spacing: 0.09rem;
+      margin-bottom: 1rem;
+      order: -1;
+
+      .subTitleS {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        line-height: 4rem;
+
+        .meS {
+          color: $color-secondary;
         }
 
-        &:hover svg {
-          opacity: 1;
-          transform: scale(1.2);
-          color: #e63946; /* Cor para o ícone ao passar o mouse */
+        .bioS {
+          color: $color-primary;
+          font-family: $font-body;
+          font-weight: $font-weight-regular;
+          font-size: 1.3rem;
+          opacity: 0.3;
+        }
+      }
+    }
+
+    .leftSide {
+      width: 90%;
+      order: 1;
+
+      .title {
+        display: none;
+      }
+
+      .buttonCV {
+        margin-top: 3.4rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    hr {
+      display: none;
+    }
+
+    .rightSide {
+      width: 90%;
+      order: 0;
+
+      .skills {
+        flex-direction: column;
+
+        ul {
+          flex-direction: row;
+          padding-left: 25px;
+          padding-right: 25px;
+          margin: 0
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img{
+            width: 5rem;
+            height: 5rem;
+          }
         }
       }
     }

@@ -20,8 +20,18 @@ const index = ({ onOptionChange, selectedOption }) => {
 
   return (
     <div className={styles.skillsSlide}>
+
+      {/* .title para MOBILE */}
+      <div className={styles.titleS}>
+        <span>about</span>
+        <div className={styles.subTitleS}>
+          <span className={styles.meS}>ME</span>
+          <span className={styles.bioS}>skills</span>
+        </div>
+      </div>
+
       <div className={styles.leftSide}>
-      <div className={styles.title}>
+        <div className={styles.title}>
           <span>about</span>
           <div className={styles.subTitle}>
             <span className={styles.me}>ME</span>
@@ -29,7 +39,7 @@ const index = ({ onOptionChange, selectedOption }) => {
           </div>
         </div>
         <div className={styles.buttonCV}>
-          <a href="/assets/cvEN.pdf" download="Curriculum Vitae">
+          <a href="/assets/BernardoCV.pdf" download="Curriculum Vitae">
             <span>Curriculum Vitae</span>
           </a>
         </div>
@@ -50,12 +60,11 @@ const index = ({ onOptionChange, selectedOption }) => {
           />
         </div>
       </div>
-       
 
       <hr />
 
       <div className={styles.rightSide}>
-      <div className={styles.skills}>
+        <div className={styles.skills}>
           <ul>
             <li>
               <img src={HTMLIcon} />
@@ -101,7 +110,6 @@ const index = ({ onOptionChange, selectedOption }) => {
           </ul>
         </div>
       </div>
-        
     </div>
   );
 };
