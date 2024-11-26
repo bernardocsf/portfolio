@@ -10,13 +10,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
+    border: 2px solid $color-primary;
     border-radius: 50%;
     margin-right: 15px;
     transition: 0.5s ease;
 
     .icon {
-      color: white;
+      color: $color-primary;
     }
 
     &:hover {
@@ -24,8 +24,7 @@
       background-color: $color-secondary;
     }
 
-    /* Mixin - mobile */
-    @include respond("s") {
+    @include respond("xs") {
       border: none;
       margin-right: 0;
     }

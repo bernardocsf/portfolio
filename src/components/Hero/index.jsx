@@ -5,21 +5,25 @@ import Social from "../Social";
 const index = () => {
   return (
     <div className={styles.hero}>
-      <div className={styles.heroTitle}>
-        <h1>
-          <span>Hi, I am</span>
-          <span className={styles.heroTBernardo}>Bernardo</span>
-        </h1>
-      </div>
-      <div className={styles.topLeft}>Software Developer</div>
-      <div className={styles.topRight}>Contact Me</div>
-      <div className={styles.bottomLeft}>
+      <div className={styles.heroSocialsM}>
         <Social />
       </div>
-      <div className={styles.bottomRight}>
-        <div className={styles.ball}></div>
+      <div className={styles.heroTop}>
+        <div className={styles.topLeft}>Software Developer</div>
+        <div className={styles.topRight}>Contact Me</div>
       </div>
-      
+      <div className={styles.heroTitle}>
+        <span>Hi, I am</span>
+        <span className={styles.heroTBernardo}>Bernardo</span>
+      </div>
+      <div className={styles.heroBottom}>
+        <div className={styles.bottomLeft}>
+          <Social />
+        </div>
+        <div className={styles.bottomRight}>
+          <div className={styles.ball}></div>
+        </div>
+      </div>
     </div>
   );
 };

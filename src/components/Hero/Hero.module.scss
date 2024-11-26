@@ -5,133 +5,122 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  padding: $side-padding;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%),
-  url("../../assets/images/foto.png");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("../../assets/images/foto.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: $font-body, Arial, sans-serif;
-  font-weight: $font-weight-semibold;
-  color: $color-primary;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .heroSocialsM {
+    display: none;
+  }
 
   .heroTitle {
-    position: absolute;
-    left: $side-padding;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    font-family: $font-title;
+    color: $color-secondary;
+    font-weight: $font-weight-semibold;
+    font-size: clamp(3rem, 8vw, 10rem);
+    order: 0;
 
-    h1 {
-      display: flex;
-      flex-direction: column;
-      font-family: $font-title;
-      color: $color-secondary;
-      font-weight: $font-weight-semibold;
-      font-size: 8rem;
-
-      .heroTBernardo {
-        color: $color-primary;
-      }
+    .heroTBernardo {
+      color: $color-primary;
     }
   }
 
-  .topLeft,
-  .topRight,
-  .bottomLeft,
-  .bottomRight {
-    position: absolute;
-  }
-
-  .topLeft {
-    top: $side-padding;
-    left: $side-padding;
-  }
-
-  .topRight {
-    top: $side-padding;
-    right: $side-padding;
-  }
-
-  .bottomLeft {
-    bottom: $side-padding;
-    left: $side-padding;
-  }
-
-  .bottomRight {
-    bottom: $side-padding;
-    right: $side-padding;
-    border: 2px solid white;
-    width: 30px;
-    height: 60px;
-    border-radius: 50px;
+  .heroTop,
+  .heroBottom {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
 
-    .ball {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      border: 2px solid #ffffff60;
-      background-color: $color-secondary;
-      animation: bounceBall 2.5s infinite ease-in-out;
-      will-change: transform, opacity;
+    .bottomRight {
+      border: 2px solid white;
+      width: 30px;
+      height: 60px;
+      border-radius: 50px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: hidden;
+
+      .ball {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid #ffffff50;
+        background-color: $color-secondary;
+        animation: bounceBall 3s infinite ease-in-out;
+        will-change: transform, opacity;
+      }
     }
   }
 
   @keyframes bounceBall {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(10px);
     }
-    55% {
-      transform: translateY(55px);
+    50% {
+      transform: translateY(50px);
       opacity: 0;
     }
   }
 
-  /* Mixin - mobile */
-  @include respond("s") {
-    background-position: 70% center;
-    text-align: center;
+  @include respond("xs") {
+    padding: calc($side-padding + 30px);
+    background-position: center, 70%;
+    justify-content: flex-start;
 
-    .heroTitle {
-      top: 14%;
-      left: 50%;
-      transform: translateX(-50%);
+    .heroSocialsM {
+      display: flex;
+      justify-content: center;
+      order: -1;
+      margin-bottom: 2vh;
+    }
 
-      h1 {
-        line-height: 2.5rem;
-        font-size: 2rem;
+    .heroTop {
+      justify-content: center;
+      order: 1;
 
-        .heroTBernardo {
-          font-size: 4rem;
-        }
+      .topRight {
+        display: none;
+      }
+
+      .topLeft {
+        font-size: 4vw;
+        opacity: 0.3;
+        margin: 2%;
       }
     }
 
-    .topLeft {
-      top: calc(26vh + 2rem);
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0.3;
+    .heroTitle {
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(2rem, 14vw, 10rem);
+      order: 0;
+      margin: 2%;
     }
 
-    .topRight {
-      display: none;
-    }
+    .heroBottom {
+      justify-content: center;
+      order: 2;
+      margin-top: auto;
 
-    .bottomLeft {
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 0;
-    }
-
-    .bottomRight {
-      left: 50%;
-      transform: translateX(-50%);
+      .bottomLeft {
+        display: none;
+      }
     }
   }
 }

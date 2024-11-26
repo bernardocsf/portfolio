@@ -5,19 +5,47 @@ import Skills from "../Skills";
 
 const index = () => {
   const [selectedOption, setSelectedOption] = useState("option1");
-  
+  const [firstTouch, setFirstTouch] = useState(0);
+  const [lastTouch, setLastTouch] = useState(0);
+
   const optionChanged = (option) => {
     setSelectedOption(option);
   };
 
+  const handleFirstTouch = (event) => {
+    setFirstTouch(event.touches[0].clientX);
+  };
+
+  const handleTouchMove = (event) => {
+    setLastTouch(event.touches[0].clientX);
+  };
+
+  const handleLastTouch = () => {
+    const diffTouches = firstTouch - lastTouch;
+
+    if (diffTouches > 20) {
+      setSelectedOption("option2");
+    } else if (diffTouches < -20) {
+      setSelectedOption("option1");
+    }
+
+    setFirstTouch(0);
+    setLastTouch(0);
+  };
+
   useEffect(() => {
     if (!selectedOption) {
-      setSelectedOption("option1")
+      setSelectedOption("option1");
     }
-  })
+  }, [selectedOption]);
 
   return (
-    <div>
+    <div
+      className={styles.aboutWrapper}
+      onTouchStart={handleFirstTouch}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleLastTouch}
+    >
       <div
         className={`${styles.slideWrapper} ${
           selectedOption === "option2" ? styles.showSkills : ""
