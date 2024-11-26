@@ -32,7 +32,6 @@
   }
 
   @include respond("xs") {
-    padding: 1rem;
     .tickerContent {
       .tickerWord {
         font-size: 1rem;
