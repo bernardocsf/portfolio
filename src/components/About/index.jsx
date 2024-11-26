@@ -12,6 +12,12 @@ const index = () => {
     setSelectedOption(option);
   };
 
+  useEffect(() => {
+    if (!selectedOption) {
+      setSelectedOption("option1");
+    }
+  }, [selectedOption]);
+
   const handleFirstTouch = (event) => {
     setFirstTouch(event.touches[0].clientX);
   };
@@ -33,12 +39,6 @@ const index = () => {
     setLastTouch(0);
   };
 
-  useEffect(() => {
-    if (!selectedOption) {
-      setSelectedOption("option1");
-    }
-  }, [selectedOption]);
-
   return (
     <div
       className={styles.aboutWrapper}
@@ -55,10 +55,7 @@ const index = () => {
           <Bio onOptionChange={optionChanged} selectedOption={selectedOption} />
         </div>
         <div className={styles.slide}>
-          <Skills
-            onOptionChange={optionChanged}
-            selectedOption={selectedOption}
-          />
+          <Skills onOptionChange={optionChanged} selectedOption={selectedOption} />
         </div>
       </div>
     </div>

@@ -2,9 +2,9 @@
 @import "../../styles/mixins";
 
 .aboutWrapper {
+  position: relative;
   width: 100%;
   overflow: hidden;
-  position: relative;
 
   .slideWrapper {
     display: flex;

@@ -3,16 +3,22 @@
 
 .tickerContainer {
   width: 100%;
+  padding: 0.5rem;
   overflow: hidden;
-  white-space: nowrap;
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    white 20%,
-    white 80%,
+    rgb(0, 0, 0) 30%,
+    rgb(0, 0, 0) 70%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    rgb(0, 0, 0) 30%,
+    rgb(0, 0, 0) 70%,
+    transparent
+  );
 
   .tickerContent {
     display: inline-flex;
@@ -20,21 +26,16 @@
     .tickerWord {
       font-style: italic;
       font-size: 2rem;
-      margin-left: 50px;
-      margin-right: 50px;
+      margin-left: 5vw;
+      margin-right: 5vw;
     }
   }
 
-  @include respond("s") {
-  
+  @include respond("xs") {
+    padding: 1rem;
     .tickerContent {
-      display: inline-flex;
-  
       .tickerWord {
-        font-style: italic;
-        font-size: 1.5rem;
-        margin-left: 50px;
-        margin-right: 50px;
+        font-size: 1rem;
       }
     }
   }

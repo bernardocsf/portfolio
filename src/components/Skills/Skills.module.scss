@@ -41,17 +41,23 @@
         align-items: baseline;
         justify-content: space-between;
         line-height: 4rem;
+        
 
         .me {
           color: $color-secondary;
         }
 
-        .bio {
+        /* .skills {
           color: $color-primary;
           font-family: $font-body;
           font-weight: $font-weight-regular;
           font-size: 2rem;
           opacity: 0.3;
+        } */
+
+        .skills {
+          opacity: 0.3;
+          font-size: 2.5rem;
         }
       }
     }

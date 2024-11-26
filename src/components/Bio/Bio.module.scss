@@ -6,40 +6,30 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #000000;
-  font-family: $font-body;
-  font-weight: $font-weight-semibold;
-  color: $color-primary;
-  font-size: 1rem;
+  padding: $side-padding;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
-  .titleS{
+  .titleS {
     display: none;
   }
 
   .leftSide {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 50%;
+    text-align: center;
 
     .info {
-      letter-spacing: 0.09rem;
-
       p {
         font-weight: $font-weight-light;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.3rem;
       }
 
       h1 {
         opacity: 0.3;
-        font-size: 4rem;
-        margin-top: 3rem;
-        margin-bottom: 0;
+        font-size: 4.5vw;
+        margin-bottom: 1rem;
       }
     }
   }
@@ -47,23 +37,21 @@
   hr {
     height: 60%;
     border-color: $color-secondary;
-    margin: 100px;
+    margin-right: 5rem;
+    margin-left: 5rem;
   }
 
   .rightSide {
+    width: 12%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 12%;
 
     .title {
       display: flex;
       flex-direction: column;
       font-family: $font-title;
-      font-weight: $font-weight-semibold;
       font-size: 5rem;
-      letter-spacing: 0.09rem;
       margin-bottom: 0.5rem;
 
       .subTitle {
@@ -76,17 +64,16 @@
           color: $color-secondary;
         }
 
-        .bio {
-          color: $color-primary;
+        /* .bio {
           font-family: $font-body;
           font-weight: $font-weight-regular;
           font-size: 2rem;
           opacity: 0.3;
-        }
-
-        /* .bio {
-          opacity: 0.3;
         } */
+
+        .bio {
+          opacity: 0.3;
+        }
       }
     }
 
@@ -94,10 +81,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 10rem;
+      width: 11rem;
       height: 2.5rem;
       border: 2px solid $color-secondary;
       border-radius: 5px;
+      margin-top: 2rem;
       margin-bottom: 5rem;
       cursor: pointer;
 
@@ -114,15 +102,14 @@
       align-items: center;
       gap: 1.5rem;
 
-      // Define estilos padrão para os botões de rádio
       input[type="radio"] {
         cursor: pointer;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
 
-        width: 13px;
-        height: 13px;
+        width: 1rem;
+        height: 1rem;
         border: 2px solid $color-primary;
         opacity: 0.3;
         border-radius: 50%;
@@ -145,33 +132,36 @@
     }
   }
 
-  @include respond("s") {
+  @include respond("xs") {
+    display: flex;
     flex-direction: column;
+    align-items: center;
 
     .titleS {
       display: flex;
       flex-direction: column;
       font-family: $font-title;
-      font-weight: $font-weight-semibold;
-      font-size: 3.5rem;
-      letter-spacing: 0.09rem;
-      margin-bottom: 2rem;
+      font-size: 16vw;
+      margin-bottom: 5vh;
 
       .subTitleS {
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-        line-height: 4rem;
+        line-height: 3rem;
 
         .meS {
           color: $color-secondary;
         }
 
-        .bioS {
-          color: $color-primary;
+        /* .bioS {
           font-family: $font-body;
           font-weight: $font-weight-regular;
-          font-size: 1.3rem;
+          font-size: 2rem;
+          opacity: 0.3;
+        } */
+
+        .bioS {
           opacity: 0.3;
         }
       }
@@ -179,17 +169,19 @@
 
     .leftSide {
       width: 95%;
+      text-align: center;
 
       .info {
-        letter-spacing: 0.09rem;
-
         p {
-          font-size: 0.8rem;
-          line-height: 1.2rem;
+          font-weight: $font-weight-light;
+          font-size: 0.7rem;
+          line-height: 1rem;
         }
 
         h1 {
-          font-size: 3rem;
+          font-size: 12vw;
+          margin-bottom: 1vh;
+          margin-top: 5vh;
         }
       }
     }
@@ -206,13 +198,22 @@
       }
 
       .buttonCV {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+        width: 9rem;
+        height: 2rem;
+        margin-top: 5vh;
+        margin-bottom: 3.5vh;
+
+        a {
+          font-size: 0.65rem;
+        }
       }
 
-      /* .radioButtons {
-        margin-bottom: 3rem;
-      } */
+      .radioButtons {
+        input[type="radio"] {
+          width: 0.75rem;
+          height: 0.75rem;
+        }
+      }
     }
   }
 }
