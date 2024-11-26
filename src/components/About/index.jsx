@@ -29,9 +29,9 @@ const index = () => {
   const handleLastTouch = () => {
     const diffTouches = firstTouch - lastTouch;
 
-    if (diffTouches > 20) {
+    if (diffTouches > 30) {
       setSelectedOption("option2");
-    } else if (diffTouches < -20) {
+    } else if (diffTouches < -30) {
       setSelectedOption("option1");
     }
 
