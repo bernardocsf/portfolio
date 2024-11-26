@@ -53,7 +53,7 @@ const index = ({ onOptionChange, selectedOption }) => {
           </div>
         </div>
         <div className={styles.buttonCV}>
-          <a href="/assets/BernardoCV.pdf" download="Curriculum Vitae">
+          <a href="BernardoCV.pdf" download="Curriculum Vitae">
             <span>Curriculum Vitae</span>
           </a>
         </div>
