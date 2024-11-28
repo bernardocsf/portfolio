@@ -4,17 +4,11 @@
 .skillsSlide {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #000000;
-  font-family: $font-body;
-  font-weight: $font-weight-semibold;
-  color: $color-primary;
-  font-size: 1rem;
+  min-height: 100vh;
+  overflow: hidden;   
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: center; 
 
   .titleS {
     display: none;
@@ -25,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 14%;
+    width: 18%;
 
     .title {
       display: flex;
@@ -47,14 +41,6 @@
           color: $color-secondary;
         }
 
-        /* .skills {
-          color: $color-primary;
-          font-family: $font-body;
-          font-weight: $font-weight-regular;
-          font-size: 2rem;
-          opacity: 0.3;
-        } */
-
         .skills {
           opacity: 0.3;
           font-size: 2.5rem;
@@ -70,6 +56,7 @@
       height: 2.5rem;
       border: 2px solid $color-secondary;
       border-radius: 5px;
+      margin-top: 2rem;
       margin-bottom: 5rem;
       cursor: pointer;
 
@@ -123,7 +110,7 @@
   }
 
   .rightSide {
-    width: 55%;
+    width: 50%;
 
     .skills {
       display: flex;
@@ -147,6 +134,18 @@
       }
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   @include respond("s") {
     flex-direction: column;

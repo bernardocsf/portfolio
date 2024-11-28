@@ -20,7 +20,6 @@ const index = ({ onOptionChange, selectedOption }) => {
 
   return (
     <div className={styles.skillsSlide}>
-
       {/* .title para MOBILE */}
       <div className={styles.titleS}>
         <span>about</span>

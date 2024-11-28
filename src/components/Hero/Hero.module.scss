@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: nowrap; 
 
   .heroSocialsM {
     display: none;
@@ -30,7 +31,7 @@
     font-family: $font-title;
     color: $color-secondary;
     font-weight: $font-weight-semibold;
-    font-size: clamp(3rem, 8vw, 10rem);
+    font-size: clamp(3rem, 8vw, 18rem);
     order: 0;
 
     .heroTBernardo {
@@ -84,7 +85,7 @@
     justify-content: flex-start;
 
     .heroSocialsM {
-      display: flex;
+      display: flex;  
       justify-content: center;
       order: -1;
       margin-bottom: 2vh;
@@ -102,11 +103,13 @@
         font-size: 4vw;
         opacity: 0.3;
         margin: 2%;
+        font-size: clamp(0.5rem, 4vw, 10rem);
       }
     }
 
     .heroTitle {
       justify-content: center;
+      align-items: center;
       text-align: center;
       font-size: clamp(2rem, 14vw, 10rem);
       order: 0;
