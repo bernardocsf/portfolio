@@ -10,6 +10,8 @@ const index = ({ onOptionChange, selectedOption }) => {
     onOptionChange(value);
   };
 
+  
+
   return (
     <div className={styles.bioSlide}>
 

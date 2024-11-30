@@ -25,7 +25,7 @@ const index = ({ onOptionChange, selectedOption }) => {
         <span>about</span>
         <div className={styles.subTitleS}>
           <span className={styles.meS}>ME</span>
-          <span className={styles.bioS}>skills</span>
+          <span className={styles.skillsS}>skills</span>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ const index = ({ onOptionChange, selectedOption }) => {
           <span>about</span>
           <div className={styles.subTitle}>
             <span className={styles.me}>ME</span>
-            <span className={styles.bio}>skills</span>
+            <span className={styles.skills}>skills</span>
           </div>
         </div>
         <div className={styles.buttonCV}>

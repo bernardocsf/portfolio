@@ -12,11 +12,15 @@ const index = () => {
     setSelectedOption(option);
   };
 
+  console.log(selectedOption);
+  
+
   useEffect(() => {
     if (!selectedOption) {
       setSelectedOption("option1");
     }
   }, [selectedOption]);
+  
 
   const handleFirstTouch = (event) => {
     setFirstTouch(event.touches[0].clientX);
