@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Contact.module.scss";
 
 const index = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Email enviado com sucesso");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Erro ao enviar mensagem");
+      }
+    } catch (error) {
+      console.error("Erro: ", error);
+      alert("Erro ao enviar mensagem");
+    }
+  };
+
   return (
     <div className={styles.contact}>
       <div className={styles.leftSide}>
@@ -10,17 +45,33 @@ const index = () => {
         <span>touch</span>
       </div>
       <div className={styles.rightSide}>
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputContainer}>
-            <input type="text" id="name" placeholder="your name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder="your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className={styles.inputContainer}>
-            <input type="email" id="email" placeholder="your email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="your email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className={styles.inputContainer}>
             <textarea
-              id="message"
+              name="message"
               placeholder="share your thoughts"
+              value={formData.message}
+              onChange={handleChange}
               required
             ></textarea>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Skills.module.scss";
+import { IoIosArrowBack } from "react-icons/io";
 import HTMLIcon from "../../assets/icons/html.svg";
 import CSSIcon from "../../assets/icons/css.svg";
 import SassIcon from "../../assets/icons/sass.svg";
@@ -11,7 +12,6 @@ import ReactIcon from "../../assets/icons/react.svg";
 import NextIcon from "../../assets/icons/nextjs.svg";
 import VueIcon from "../../assets/icons/vue.svg";
 import GitIcon from "../../assets/icons/mdi_git.svg";
-import { IoIosArrowBack } from "react-icons/io";
 
 const index = ({ swipeSide }) => {
   return (
@@ -31,11 +31,11 @@ const index = ({ swipeSide }) => {
             <span className={styles.skills}>skills</span>
           </div>
         </div>
-        <div className={styles.buttonCV}>
-          <a href="/assets/BernardoCV.pdf" download="Curriculum Vitae">
+        <button className={styles.buttonCV}>
+          <a href="BernardoCV.pdf" download="Curriculum Vitae">
             <span>Curriculum Vitae</span>
           </a>
-        </div>
+        </button>
         <div className={styles.swipe} onClick={() => swipeSide("bio")}>
           <IoIosArrowBack />
           <IoIosArrowBack />

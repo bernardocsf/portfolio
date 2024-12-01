@@ -42,11 +42,11 @@ const index = ({ swipeSide }) => {
             <span className={styles.bio}>bio</span>
           </div>
         </div>
-        <div className={styles.buttonCV}>
+        <button className={styles.buttonCV}>
           <a href="BernardoCV.pdf" download="Curriculum Vitae">
             <span>Curriculum Vitae</span>
           </a>
-        </div>
+        </button>
         <div className={styles.swipe} onClick={() => swipeSide("skills")}>
             <IoIosArrowForward />
             <IoIosArrowForward />

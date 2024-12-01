@@ -73,6 +73,7 @@
       justify-content: center;
       width: 11rem;
       height: 2.5rem;
+      background-color: transparent;
       border: 2px solid $color-secondary;
       border-radius: 5px;
       margin-top: 2rem;
@@ -182,12 +183,9 @@
         }
       }
 
-      .radioButtons {
-        margin-bottom: 4vh;
-
-        input[type="radio"] {
-          width: 0.75rem;
-          height: 0.75rem;
+      .swipe {
+        svg {
+          font-size: 1rem;
         }
       }
     }
