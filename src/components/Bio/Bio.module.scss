@@ -119,6 +119,10 @@
           box-shadow: 0 0 0 5px rgba($color-secondary, 0.3);
         }
       }
+
+      input[type="radio"]:disabled {
+        cursor: auto;
+      }
     }
   }
 

@@ -5,17 +5,12 @@ import Hobbies from "../Hobbies";
 
 const index = ({ onOptionChange, selectedOption }) => {
 
-  const optionChanged = (event) => {
-    const value = event.target.value;
-    onOptionChange(value);
+  const handleOptionChange = (event) => {
+    onOptionChange(event.target.value);
   };
-
-  
 
   return (
     <div className={styles.bioSlide}>
-
-      {/* .title para MOBILE */}
       <div className={styles.titleS}>
         <span>about</span>
         <div className={styles.subTitleS}>
@@ -23,7 +18,6 @@ const index = ({ onOptionChange, selectedOption }) => {
           <span className={styles.bioS}>bio</span>
         </div>
       </div>
-
       <div className={styles.leftSide}>
         <Ticker />
         <div className={styles.info}>
@@ -43,9 +37,7 @@ const index = ({ onOptionChange, selectedOption }) => {
         </div>
         <Hobbies />
       </div>
-
       <hr />
-
       <div className={styles.rightSide}>
         <div className={styles.title}>
           <span>about</span>
@@ -63,17 +55,17 @@ const index = ({ onOptionChange, selectedOption }) => {
           <input
             type="radio"
             name="option"
-            value="option1"
-            checked={selectedOption === "option1"}
-            onChange={optionChanged}
+            value="bio"
+            checked={selectedOption === "bio"}
+            onChange={handleOptionChange}
+            disabled={selectedOption === "bio"}
           />
-
           <input
             type="radio"
             name="option"
-            value="option2"
-            checked={selectedOption === "option2"}
-            onChange={optionChanged}
+            value="skills"
+            checked={selectedOption === "skills"}
+            onChange={handleOptionChange}
           />
         </div>
       </div>

@@ -13,14 +13,13 @@ import VueIcon from "../../assets/icons/vue.svg";
 import GitIcon from "../../assets/icons/mdi_git.svg";
 
 const index = ({ onOptionChange, selectedOption }) => {
-  const optionChanged = (event) => {
-    const value = event.target.value;
-    onOptionChange(value);
+
+  const handleOptionChange = (event) => {
+    onOptionChange(event.target.value);
   };
 
   return (
     <div className={styles.skillsSlide}>
-      {/* .title para MOBILE */}
       <div className={styles.titleS}>
         <span>about</span>
         <div className={styles.subTitleS}>
@@ -28,7 +27,6 @@ const index = ({ onOptionChange, selectedOption }) => {
           <span className={styles.skillsS}>skills</span>
         </div>
       </div>
-
       <div className={styles.leftSide}>
         <div className={styles.title}>
           <span>about</span>
@@ -46,22 +44,21 @@ const index = ({ onOptionChange, selectedOption }) => {
           <input
             type="radio"
             name="option"
-            value="option1"
-            checked={selectedOption === "option1"}
-            onChange={optionChanged}
+            value="bio"
+            checked={selectedOption === "bio"}
+            onChange={handleOptionChange}
           />
           <input
             type="radio"
             name="option"
-            value="option2"
-            checked={selectedOption === "option2"}
-            onChange={optionChanged}
+            value="skills"
+            checked={selectedOption === "skills"}
+            onChange={handleOptionChange}
+            disabled={selectedOption === "skills"}
           />
         </div>
       </div>
-
       <hr />
-
       <div className={styles.rightSide}>
         <div className={styles.skills}>
           <ul>

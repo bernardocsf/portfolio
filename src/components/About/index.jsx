@@ -4,23 +4,18 @@ import Bio from "../Bio";
 import Skills from "../Skills";
 
 const index = () => {
-  const [selectedOption, setSelectedOption] = useState("option1");
+  const [selectedOption, setSelectedOption] = useState("bio");
   const [firstTouch, setFirstTouch] = useState(0);
   const [lastTouch, setLastTouch] = useState(0);
 
-  const optionChanged = (option) => {
-    setSelectedOption(option);
-  };
-
   console.log(selectedOption);
-  
 
   useEffect(() => {
-    if (!selectedOption) {
-      setSelectedOption("option1");
+    const radio = document.querySelector(`input[value="${selectedOption}"]`);
+    if (radio) {
+      radio.checked = true;
     }
   }, [selectedOption]);
-  
 
   const handleFirstTouch = (event) => {
     setFirstTouch(event.touches[0].clientX);
@@ -33,14 +28,18 @@ const index = () => {
   const handleLastTouch = () => {
     const diffTouches = firstTouch - lastTouch;
 
-    if (diffTouches > 30) {
-      setSelectedOption("option2");
-    } else if (diffTouches < -30) {
-      setSelectedOption("option1");
+    if (diffTouches > 30 && selectedOption !== "skills") {
+      setSelectedOption("skills");
+    } else if (diffTouches < -30 && selectedOption !== "bio") {
+      setSelectedOption("bio");
     }
 
     setFirstTouch(0);
     setLastTouch(0);
+  };
+
+  const handleRadioChange = (option) => {
+    setSelectedOption(option);
   };
 
   return (
@@ -51,15 +50,23 @@ const index = () => {
       onTouchEnd={handleLastTouch}
     >
       <div
-        className={`${styles.slideWrapper} ${
-          selectedOption === "option2" ? styles.showSkills : ""
-        }`}
+        className={styles.slideWrapper}
+        style={{
+          transform:
+            selectedOption === "skills" ? "translateX(-50%)" : "translateX(0)",
+        }}
       >
         <div className={styles.slide}>
-          <Bio onOptionChange={optionChanged} selectedOption={selectedOption} />
+          <Bio
+            selectedOption={selectedOption}
+            onOptionChange={handleRadioChange}
+          />
         </div>
         <div className={styles.slide}>
-          <Skills onOptionChange={optionChanged} selectedOption={selectedOption} />
+          <Skills
+            selectedOption={selectedOption}
+            onOptionChange={handleRadioChange}
+          />
         </div>
       </div>
     </div>
