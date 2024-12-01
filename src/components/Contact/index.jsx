@@ -20,7 +20,7 @@ const index = () => {
           <div className={styles.inputContainer}>
             <textarea
               id="message"
-              placeholder="your message"
+              placeholder="share your thoughts"
               required
             ></textarea>
           </div>
@@ -30,6 +30,10 @@ const index = () => {
             </button>
           </div>
         </form>
+        <div className={styles.writeMe}>
+          <span>or u can just write me to</span>
+          <span className={styles.mail}>webernardocsf@gmail.com</span>
+        </div>
       </div>
     </div>
   );
