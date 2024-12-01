@@ -11,13 +11,9 @@ import ReactIcon from "../../assets/icons/react.svg";
 import NextIcon from "../../assets/icons/nextjs.svg";
 import VueIcon from "../../assets/icons/vue.svg";
 import GitIcon from "../../assets/icons/mdi_git.svg";
+import { IoIosArrowBack } from "react-icons/io";
 
-const index = ({ onOptionChange, selectedOption }) => {
-
-  const handleOptionChange = (event) => {
-    onOptionChange(event.target.value);
-  };
-
+const index = ({ swipeSide }) => {
   return (
     <div className={styles.skillsSlide}>
       <div className={styles.titleS}>
@@ -40,22 +36,10 @@ const index = ({ onOptionChange, selectedOption }) => {
             <span>Curriculum Vitae</span>
           </a>
         </div>
-        <div className={styles.radioButtons}>
-          <input
-            type="radio"
-            name="option"
-            value="bio"
-            checked={selectedOption === "bio"}
-            onChange={handleOptionChange}
-          />
-          <input
-            type="radio"
-            name="option"
-            value="skills"
-            checked={selectedOption === "skills"}
-            onChange={handleOptionChange}
-            disabled={selectedOption === "skills"}
-          />
+        <div className={styles.swipe} onClick={() => swipeSide("bio")}>
+          <IoIosArrowBack />
+          <IoIosArrowBack />
+          <IoIosArrowBack />
         </div>
       </div>
       <hr />

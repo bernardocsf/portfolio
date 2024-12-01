@@ -8,15 +8,6 @@ const index = () => {
   const [firstTouch, setFirstTouch] = useState(0);
   const [lastTouch, setLastTouch] = useState(0);
 
-  console.log(selectedOption);
-
-  useEffect(() => {
-    const radio = document.querySelector(`input[value="${selectedOption}"]`);
-    if (radio) {
-      radio.checked = true;
-    }
-  }, [selectedOption]);
-
   const handleFirstTouch = (event) => {
     setFirstTouch(event.touches[0].clientX);
   };
@@ -59,13 +50,13 @@ const index = () => {
         <div className={styles.slide}>
           <Bio
             selectedOption={selectedOption}
-            onOptionChange={handleRadioChange}
+            swipeSide={handleRadioChange}
           />
         </div>
         <div className={styles.slide}>
           <Skills
             selectedOption={selectedOption}
-            onOptionChange={handleRadioChange}
+            swipeSide={handleRadioChange}
           />
         </div>
       </div>

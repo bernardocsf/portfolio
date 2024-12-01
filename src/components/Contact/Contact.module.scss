@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.contact {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: $side-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .leftSide {
+    width: 30%;
+    font-family: $font-title;
+    font-size: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .getIn {
+      display: flex;
+      justify-content: flex-end;
+      color: $color-secondary;
+    }
+  }
+
+  .rightSide {
+    width: 50%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+
+      .inputContainer {
+        input,
+        textarea {
+          background: transparent;
+          border: none;
+          border-bottom: 2px solid hsla(0, 0%, 100%, 0.308);
+          padding: 0.5rem;
+          font-size: 1.2vw;
+          color: $color-primary;
+          outline: none;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            border-bottom: 2px solid $color-secondary;
+          }
+
+          &::placeholder {
+            color: hsla(0, 0%, 100%, 0.304);
+          }
+        }
+      }
+
+      .submitButton {
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: 1px solid $color-secondary;
+        color: $color-secondary;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $color-secondary;
+          color: black;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -2,13 +2,9 @@ import React from "react";
 import styles from "./Bio.module.scss";
 import Ticker from "../Ticker";
 import Hobbies from "../Hobbies";
+import { IoIosArrowForward } from "react-icons/io";
 
-const index = ({ onOptionChange, selectedOption }) => {
-
-  const handleOptionChange = (event) => {
-    onOptionChange(event.target.value);
-  };
-
+const index = ({ swipeSide }) => {
   return (
     <div className={styles.bioSlide}>
       <div className={styles.titleS}>
@@ -51,22 +47,10 @@ const index = ({ onOptionChange, selectedOption }) => {
             <span>Curriculum Vitae</span>
           </a>
         </div>
-        <div className={styles.radioButtons}>
-          <input
-            type="radio"
-            name="option"
-            value="bio"
-            checked={selectedOption === "bio"}
-            onChange={handleOptionChange}
-            disabled={selectedOption === "bio"}
-          />
-          <input
-            type="radio"
-            name="option"
-            value="skills"
-            checked={selectedOption === "skills"}
-            onChange={handleOptionChange}
-          />
+        <div className={styles.swipe} onClick={() => swipeSide("skills")}>
+            <IoIosArrowForward />
+            <IoIosArrowForward />
+            <IoIosArrowForward />
         </div>
       </div>
     </div>
