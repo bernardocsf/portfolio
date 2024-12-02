@@ -114,6 +114,10 @@
       font-size: clamp(2rem, 14vw, 10rem);
       order: 0;
       margin: 2%;
+
+      .heroTHI {
+        font-size: clamp(1rem, 10vw, 15rem);
+      }
     }
 
     .heroBottom {

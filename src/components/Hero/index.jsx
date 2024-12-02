@@ -13,7 +13,7 @@ const index = () => {
         <div className={styles.topRight}>Contact Me</div>
       </div>
       <div className={styles.heroTitle}>
-        <span>Hi, I am</span>
+        <span className={styles.heroTHI}>Hi, I am</span>
         <span className={styles.heroTBernardo}>Bernardo</span>
       </div>
       <div className={styles.heroBottom}>
