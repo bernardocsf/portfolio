@@ -17,7 +17,7 @@ const index = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://portfolio-oe0k.onrender.com/send-email", {
+      const response = await fetch("https://portfolio-zniy.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
