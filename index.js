@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import nodemailer from "nodemailer";
+import nodemailer from "nodemailer"; //biblio do nodejs para emails
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -10,8 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/send-email", async (req, res) => {
-  const { name, email, message } = req.body;
+app.post("/send-email", async (req, res) => {  
+  const { name, email, message } = req.body;  
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
