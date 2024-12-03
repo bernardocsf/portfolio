@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer"; //biblio do nodejs para emails
 import dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
