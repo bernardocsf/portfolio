@@ -9,7 +9,7 @@ const index = () => {
         <Social />
       </div>
       <div className={styles.heroTop}>
-        <div className={styles.topLeft}>Softwware Developer</div>
+        <div className={styles.topLeft}>Software Developer</div>
         <div className={styles.topRight}>Contact Me</div>
       </div>
       <div className={styles.heroTitle}>
