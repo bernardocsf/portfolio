@@ -7,7 +7,7 @@ function App() {
   const contactRef = useRef(null);
 
   const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    contactRef.current?.scrollIntoView();
   };
 
   return (
