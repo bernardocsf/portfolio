@@ -19,7 +19,7 @@ const index = ({ swipeSide }) => {
         <div className={styles.info}>
           <p>
             these values are fundamental to me, both personally and
-            professionally. They guide mychoices, fostering a positive and
+            professionally. They guide my choices, fostering a positive and
             collaborative environment, while I constantly seek new challenges
             and opportunities for continuous development.
           </p>

@@ -1,5 +1,7 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./Contact.module.scss";
+import { MdContentCopy } from "react-icons/md";
+import { ToastContainer, toast } from "react-toastify";
 
 const index = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,19 @@ const index = forwardRef((props, ref) => {
     email: "",
     message: "",
   });
+
+  const email = "webernardocsf@gmail.com";
+
+  const copy = () => {
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        toast.success("Email copiado");
+      })
+      .catch((error) => {
+        console.error("Erro a copiar o email: ", error);
+      });
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -26,14 +41,14 @@ const index = forwardRef((props, ref) => {
       });
 
       if (response.ok) {
-        alert("Email enviado com sucesso");
+        toast.success("Email enviado com sucesso!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Erro ao enviar mensagem");
+        toast.error("Erro ao enviar mensagem.");
       }
     } catch (error) {
       console.error("Erro: ", error);
-      alert("Erro ao enviar mensagem");
+      toast.error("Erro ao enviar mensagem.");
     }
   };
 
@@ -83,9 +98,16 @@ const index = forwardRef((props, ref) => {
         </form>
         <div className={styles.writeMe}>
           <span>or u can just write me to</span>
-          <span className={styles.mail}>webernardocsf@gmail.com</span>
+          <span className={styles.mail}>
+            webernardocsf@gmail.com{" "}
+            <button onClick={copy}>
+              {" "}
+              <MdContentCopy />
+            </button>
+          </span>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 });

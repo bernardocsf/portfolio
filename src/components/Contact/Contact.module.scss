@@ -91,6 +91,11 @@
 
       .mail {
         color: $color-secondary;
+
+        button {
+          all: unset;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -116,9 +121,14 @@
             width: 80vw;
             font-size: 4.2vw;
           }
+
+          &::placeholder {
+            color: hsla(0, 0%, 100%, 0.5);
+          }
         }
 
         .submitButton {
+          opacity: 0.5;
           width: 8rem;
           height: 2rem;
           font-size: 3.5vw;
