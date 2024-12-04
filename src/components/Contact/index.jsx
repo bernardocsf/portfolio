@@ -106,8 +106,8 @@ const index = forwardRef((props, ref) => {
             </button>
           </span>
         </div>
-      </div>
-      <ToastContainer position="top-right" autoClose={3000} />
+      </div>{/* 
+      <ToastContainer position="top-right" autoClose={3000} /> */}
     </div>
   );
 });
