@@ -17,7 +17,7 @@ const index = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("https:/bernardoferreira.com/send-email", {
+      const response = await fetch("https://bernardoferreira.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
