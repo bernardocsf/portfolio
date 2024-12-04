@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import styles from "./Contact.module.scss";
 
-const index = () => {
+const index = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -38,7 +38,7 @@ const index = () => {
   };
 
   return (
-    <div className={styles.contact}>
+    <div ref={ref} className={styles.contact}>
       <div className={styles.leftSide}>
         <span>let's</span>
         <span className={styles.getIn}>get in</span>
@@ -88,6 +88,6 @@ const index = () => {
       </div>
     </div>
   );
-};
+});
 
 export default index;

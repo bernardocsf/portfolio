@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Hero.module.scss";
 import Social from "../Social";
 
-const index = () => {
+const index = ({ scrollToContact }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroSocialsM}>
@@ -10,7 +10,9 @@ const index = () => {
       </div>
       <div className={styles.heroTop}>
         <div className={styles.topLeft}>Software Developer</div>
-        <div className={styles.topRight}>Contact Me</div>
+        <div className={styles.topRight}>
+          <button onClick={scrollToContact}>Contact Me</button>
+        </div>
       </div>
       <div className={styles.heroTitle}>
         <span className={styles.heroTHI}>Hi, I am</span>

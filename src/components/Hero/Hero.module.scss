@@ -46,6 +46,11 @@
     align-items: flex-end;
     width: 100%;
 
+    button{
+      all: unset;
+      cursor: pointer;
+    }
+
     .bottomRight {
       border: 2px solid white;
       width: 30px;
