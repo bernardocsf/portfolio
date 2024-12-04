@@ -75,13 +75,13 @@
         90deg,
         transparent,
         rgb(0, 0, 0) 40%,
-        rgb(0, 0, 0) 60%,
+        rgb(0, 0, 0) 70%,
         transparent
       );
 
       svg {
         font-size: 1.5rem;
-        animation: swipeAnimation 5s linear infinite;
+        animation: swipeAnimation 3s linear infinite;
         transition: 0.5s;
       }
 
@@ -94,23 +94,20 @@
       0% {
         color: $color-primary;
       }
-      33% {
-        color: $color-secondary;
-      }
-      66% {
+      50% {
         color: $color-secondary;
       }
       100% {
-        color: $color-secondary;
+        color: $color-primary;
       }
     }
 
     .swipe svg:nth-child(1) {
-      animation-delay: 2s;
+      animation-delay: 1s;
     }
 
     .swipe svg:nth-child(2) {
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
 
     .swipe svg:nth-child(3) {
