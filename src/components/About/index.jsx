@@ -17,9 +17,9 @@ const index = () => {
 
     const diffTouches = startTouch - currentTouch;
 
-    if (diffTouches > 40 && selectedOption !== "skills") {
+    if (diffTouches > 70 && selectedOption !== "skills") {
       setSelectedOption("skills");
-    } else if (diffTouches < -40 && selectedOption !== "bio") {
+    } else if (diffTouches < -70 && selectedOption !== "bio") {
       setSelectedOption("bio");
     }
   };
