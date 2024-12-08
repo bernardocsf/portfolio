@@ -1,7 +1,7 @@
 import React, { useState, forwardRef } from "react";
 import styles from "./Contact.module.scss";
 import { MdContentCopy } from "react-icons/md";
-import { ToastContainer, toast } from "react-toastify";
+import Notification from "../Notification";
 
 const index = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
@@ -10,17 +10,27 @@ const index = forwardRef((props, ref) => {
     message: "",
   });
 
+  const [notification, setNotification] = useState(null);
+
   const email = "webernardocsf@gmail.com";
 
-  const copy = () => {
+  const copyToClipboard = () => {
     navigator.clipboard
       .writeText(email)
       .then(() => {
-        toast.success("Email copiado");
+        showNotification(
+          "Email copiado",
+          "info"
+        );
       })
       .catch((error) => {
-        console.error("Erro a copiar o email: ", error);
+        console.error("Erro ao copiar o email: ", error);
+        showNotification("Erro ao copiar o email", "info");
       });
+  };
+
+  const showNotification = (message, type) => {
+    setNotification({ message, type });
   };
 
   const handleChange = (event) => {
@@ -41,14 +51,14 @@ const index = forwardRef((props, ref) => {
       });
 
       if (response.ok) {
-        toast.success("Email enviado com sucesso!");
+        showNotification("Mensagem enviada", "info");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        toast.error("Erro ao enviar mensagem.");
+        showNotification("Erro ao enviar mensagem", "info");
       }
     } catch (error) {
       console.error("Erro: ", error);
-      toast.error("Erro ao enviar mensagem.");
+      showNotification("Erro ao enviar mensagem", "info");
     }
   };
 
@@ -99,15 +109,20 @@ const index = forwardRef((props, ref) => {
         <div className={styles.writeMe}>
           <span>or u can just write me to</span>
           <span className={styles.mail}>
-            webernardocsf@gmail.com{" "}
-            <button onClick={copy}>
-              {" "}
+            {email}{" "}
+            <button onClick={copyToClipboard}>
               <MdContentCopy />
             </button>
           </span>
         </div>
-      </div>{/* 
-      <ToastContainer position="top-right" autoClose={3000} /> */}
+      </div>
+      {notification && (
+        <Notification
+          message={notification.message}
+          type={notification.type}
+          onClose={() => setNotification(null)}
+        />
+      )}
     </div>
   );
 });

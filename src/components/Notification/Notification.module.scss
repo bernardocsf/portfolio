@@ -1,0 +1,48 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.notification {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  z-index: 1000;
+  animation: fadeIn 1.2s ease;
+  text-align: center;
+
+  &.fadeOut {
+    animation: fadeOut 1.2s ease forwards;
+  }
+
+  &.info {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  @include respond ("xs"){
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
