@@ -9,11 +9,11 @@ const index = () => {
   const [currentTouch, setCurrentTouch] = useState(0);
 
   const handleTouchStart = (event) => {
-    setStartTouch(event.touches[0].clientX); // Salva a posição inicial
+    setStartTouch(event.touches[0].clientX); 
   };
 
   const handleTouchMove = (event) => {
-    setCurrentTouch(event.touches[0].clientX); // Atualiza a posição enquanto o dedo se move
+    setCurrentTouch(event.touches[0].clientX); 
 
     const diffTouches = startTouch - currentTouch;
 
