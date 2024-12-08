@@ -5,63 +5,51 @@ import Skills from "../Skills";
 
 const index = () => {
   const [selectedOption, setSelectedOption] = useState("bio");
-  const [firstTouch, setFirstTouch] = useState(0);
-  const [lastTouch, setLastTouch] = useState(0);
-  const [isSwiping, setIsSwiping] = useState(false);
+  const [startTouch, setStartTouch] = useState(0);
+  const [currentTouch, setCurrentTouch] = useState(0);
 
-  const handleFirstTouch = (event) => {
-    setFirstTouch(event.touches[0].clientX);
-    setIsSwiping(true); 
+  const handleTouchStart = (event) => {
+    setStartTouch(event.touches[0].clientX); // Salva a posição inicial
   };
 
   const handleTouchMove = (event) => {
-    if (isSwiping) {
-      setLastTouch(event.touches[0].clientX);
-    }
-  };
+    setCurrentTouch(event.touches[0].clientX); // Atualiza a posição enquanto o dedo se move
 
-  const handleLastTouch = () => {
-    if (!isSwiping) return;
+    const diffTouches = startTouch - currentTouch;
 
-    const diffTouches = firstTouch - lastTouch;
-
-    if (diffTouches > 30 && selectedOption !== "skills") {
+    if (diffTouches > 40 && selectedOption !== "skills") {
       setSelectedOption("skills");
-    } else if (diffTouches < -30 && selectedOption !== "bio") {
+    } else if (diffTouches < -40 && selectedOption !== "bio") {
       setSelectedOption("bio");
     }
-
-    setFirstTouch(0);
-    setLastTouch(0);
-    setIsSwiping(false);
   };
 
-  const handleRadioChange = (option) => {
-    setSelectedOption(option);
+  const handleTouchEnd = () => {
+    setStartTouch(0);
+    setCurrentTouch(0);
   };
 
   return (
     <div
       className={styles.aboutWrapper}
-      onTouchStart={handleFirstTouch}
+      onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
-      onTouchEnd={handleLastTouch}
+      onTouchEnd={handleTouchEnd}
     >
       <div
         className={styles.slideWrapper}
         style={{
           transform:
             selectedOption === "skills" ? "translateX(-50%)" : "translateX(0)",
-          transition: isSwiping ? "none" : "transform 0.3s ease", 
         }}
       >
         <div className={styles.slide}>
-          <Bio selectedOption={selectedOption} swipeSide={handleRadioChange} />
+          <Bio selectedOption={selectedOption} swipeSide={setSelectedOption} />
         </div>
         <div className={styles.slide}>
           <Skills
             selectedOption={selectedOption}
-            swipeSide={handleRadioChange}
+            swipeSide={setSelectedOption}
           />
         </div>
       </div>
