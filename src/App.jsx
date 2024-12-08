@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const contactRef = useRef(null);
@@ -13,9 +12,9 @@ function App() {
 
   return (
     <>
-      <Hero scrollToContact={scrollToContact} />
+      <Hero scrollToContact={scrollToContact}/>
       <About />
-      <Contact ref={contactRef} />
+      <Contact ref={contactRef}/>
     </>
   );
 }

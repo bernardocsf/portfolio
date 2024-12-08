@@ -2,6 +2,7 @@ import React, { useState, forwardRef } from "react";
 import styles from "./Contact.module.scss";
 import { MdContentCopy } from "react-icons/md";
 import Notification from "../Notification";
+import Social from "../Social";
 
 const index = forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
@@ -18,10 +19,7 @@ const index = forwardRef((props, ref) => {
     navigator.clipboard
       .writeText(email)
       .then(() => {
-        showNotification(
-          "Email copiado",
-          "info"
-        );
+        showNotification("Email copiado", "info");
       })
       .catch((error) => {
         console.error("Erro ao copiar o email: ", error);
@@ -115,6 +113,10 @@ const index = forwardRef((props, ref) => {
             </button>
           </span>
         </div>
+        <div className={styles.socialFooter}>
+        <Social />
+        </div>
+        
       </div>
       {notification && (
         <Notification

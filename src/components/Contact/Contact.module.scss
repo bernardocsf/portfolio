@@ -35,6 +35,13 @@
       gap: 6vh;
 
       .inputContainer {
+        textarea {
+          max-width: 30vw;
+          min-width: 30vw;
+          max-height: 30vh;
+          min-height: 10vh;
+        }
+
         input,
         textarea {
           width: 30vw;
@@ -88,15 +95,22 @@
       align-items: center;
       line-height: 2rem;
       font-weight: $font-weight-light;
+      font-size: 1vw;
 
       .mail {
         color: $color-secondary;
+        margin-bottom: 2rem;
 
         button {
           all: unset;
           cursor: pointer;
         }
       }
+    }
+
+    .socialFooter {
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -116,6 +130,11 @@
         gap: 4vh;
 
         .inputContainer {
+          textarea {
+            max-width: 80vw;
+            min-width: 80vw;
+          }
+
           input,
           textarea {
             width: 80vw;
@@ -140,6 +159,10 @@
       .writeMe {
         line-height: 1.5rem;
         font-size: 3vw;
+
+        .mail{
+          margin-bottom: 1rem;
+        }
       }
     }
   }

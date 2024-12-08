@@ -3,6 +3,7 @@
 
 .socialContainer {
   display: flex;
+  gap: 15px;
 
   .circle {
     width: 35px;
@@ -12,7 +13,6 @@
     justify-content: center;
     border: 2px solid $color-primary;
     border-radius: 50%;
-    margin-right: 15px;
     transition: 0.5s ease;
 
     .icon {
