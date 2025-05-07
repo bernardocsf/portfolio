@@ -8,7 +8,6 @@ const index = () => {
   const socialLinks = [
     { Icon: FiGithub, link: "https://github.com/bernardocsf" },
     { Icon: RiLinkedinFill, link: "https://linkedin.com/in/bernardocsf" },
-    { Icon: FaInstagram, link: "https://www.instagram.com/bernardo_csf" },
   ];
   return (
     <div className={styles.socialContainer}>
