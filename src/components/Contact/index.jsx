@@ -105,7 +105,7 @@ const index = forwardRef((props, ref) => {
           </div>
         </form>
         <div className={styles.writeMe}>
-          <span>or u can just write me to</span>
+          <span>or you can just write me to</span>
           <span className={styles.mail}>
             {email}{" "}
             <button onClick={copyToClipboard}>
